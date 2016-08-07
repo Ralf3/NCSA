@@ -213,19 +213,20 @@ class device(object):
         plt.show()
     def plot_wave(self,data,ws=32):
         N=len(data)
-        dt=1.0/self.FS
+        dt=1.0/self.FS/8
         T=N*dt
         t = np.linspace(T, -dt, 0, endpoint=False)
+        df=self.FS/N
         print t
         widths = np.arange(1, ws)
         cwtmatr = signal.cwt(data, signal.ricker, widths)
         mean=np.mean(cwtmatr)
-        cwtmatr[cwtmatr[:,:]>3*mean]=0
+        # cwtmatr[cwtmatr[:,:]>3*mean]=0
         cax=plt.imshow(cwtmatr,aspect='auto')
         cbar = plt.colorbar(cax)
         plt.title('FS: '+str(self.FS)+' N: '+str(N))
         plt.xlabel('t [%fs]' %(dt))
-        plt.ylabel('F')
+        plt.ylabel('F [%dHz]' %(int(np.round(df))))
         plt.show()
     def plot_wave1(self,data,ws=32):
         N=len(data)
@@ -241,17 +242,18 @@ class device(object):
         # wavlet part
         dt=1.0/self.FS
         T=N*dt
+        df=self.FS/N/8
         t = np.linspace(T, -dt, 0, endpoint=False)
         widths = np.arange(1, ws)
         cwtmatr = signal.cwt(data, signal.ricker, widths)
         mean=np.mean(cwtmatr)
-        cwtmatr[cwtmatr[:,:]>3*mean]=0
+        # cwtmatr[cwtmatr[:,:]>3*mean]=0
         # print cwtmatr
         plt.subplot(2,1,2)
         cax=plt.imshow(cwtmatr,aspect='auto')
         cbar = plt.colorbar(cax)
         plt.xlabel('t [%fs]' %(dt))
-        plt.ylabel('F')
+        plt.ylabel('F [%dHz]' %(int(np.round(df))))
         plt.show()
 
 
