@@ -1,4 +1,4 @@
-NCSA: A simple programm to control the Elektor:
+NCSA: A simple program to control the Elektor:
 Network Connected Signal Analyzer with Python
 ==============================================================================
 
@@ -11,8 +11,8 @@ The NCSA can be used as a signal generator for sine, square or triangular waves.
 More important is use of the NCSA as input to sample data. The maximum sample
 frequency is 1MHz and the sample resolution can be 10Bit or 12Bit.
 
-The NCSA is connected via ethernet and can be controlled using a simple
-open source protocoll. This potocoll was implemented in Python. The Python
+The NCSA is connected via Ethernet and can be controlled using a simple
+open source protocol. This protocol was implemented in Python. The Python
 open source software is provided as a command line tool:
 
 usage: ncsa.py [-h] --c
@@ -37,4 +37,4 @@ optional arguments:
   --ws WS               frequency range for wavelet transformation 10:100
 
 It should be remarked that the software runs under Linux (Ubuntu 16.04 LTS but
-shoul run under other Linux systems too).
+should run under other Linux systems too).
