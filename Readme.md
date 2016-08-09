@@ -2,8 +2,7 @@ NCSA: A simple program to control the Elektor:
 Network Connected Signal Analyzer with Python
 ==============================================================================
 
-https://www.elektormagazine.de/news/\
-ncsa-network-connected-signal-analyzer-von-elektor
+https://www.elektormagazine.de/news/ncsa-network-connected-signal-analyzer-von-elektor
 
 ==============================================================================
 
